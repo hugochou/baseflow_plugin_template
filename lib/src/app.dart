@@ -8,18 +8,17 @@ import 'home.dart';
 class BaseflowPluginExample extends StatelessWidget {
   final String pluginName;
   final List<ExamplePage> pages;
-  final List<Widget>? appBarActions;
+  final List<Widget> appBarActions;
 
   /// [MaterialColor] to be used in the app [ThemeData]
-  final MaterialColor themeMaterialColor =
-      createMaterialColor(const Color.fromRGBO(48, 49, 60, 1));
+  final MaterialColor themeMaterialColor = createMaterialColor(const Color.fromRGBO(48, 49, 60, 1));
 
   BaseflowPluginExample({
-    Key? key,
-    required this.pluginName,
-    required String githubURL,
-    required String pubDevURL,
-    required this.pages,
+    Key key,
+    @required this.pluginName,
+    @required String githubURL,
+    @required String pubDevURL,
+    @required this.pages,
     this.appBarActions,
   }) : super(key: key) {
     pages.add(InfoPage.createPage(pluginName, githubURL, pubDevURL));
@@ -46,18 +45,18 @@ class BaseflowPluginExample extends StatelessWidget {
         hintColor: themeMaterialColor.shade500,
         primarySwatch: createMaterialColor(const Color.fromRGBO(48, 49, 60, 1)),
         textTheme: TextTheme(
-          bodyLarge: TextStyle(
+          bodyText2: TextStyle(
             color: Colors.white,
             fontSize: 16,
             height: 1.3,
           ),
-          bodyMedium: TextStyle(
+          bodyText1: TextStyle(
             color: Colors.white,
             fontSize: 18,
             height: 1.2,
           ),
-          labelLarge: TextStyle(color: Colors.white),
-          displayLarge: TextStyle(
+          button: TextStyle(color: Colors.white),
+          headline1: TextStyle(
             color: Colors.white,
             fontSize: 18,
           ),

@@ -25,10 +25,10 @@ class InfoPage extends StatelessWidget {
   final String pubDevUrl;
 
   const InfoPage._({
-    Key? key,
-    required this.pluginName,
-    required this.githubUrl,
-    required this.pubDevUrl,
+    Key key,
+    @required this.pluginName,
+    @required this.githubUrl,
+    @required this.pubDevUrl,
   }) : super(key: key);
 
   @override
@@ -46,9 +46,7 @@ class InfoPage extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Image.asset('assets/poweredByBaseflow.png',
-                      width: 250,
-                      alignment: Alignment.centerLeft,
-                      package: 'baseflow_plugin_template'),
+                      width: 250, alignment: Alignment.centerLeft, package: 'baseflow_plugin_template'),
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 24),
@@ -60,7 +58,7 @@ class InfoPage extends StatelessWidget {
                   '\n\n'
                   'Need help with integrating functionalities within your own '
                   'apps? Contact us at hello@baseflow.com',
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: Theme.of(context).textTheme.bodyText2,
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 8),
@@ -107,9 +105,8 @@ class InfoPage extends StatelessWidget {
   }
 
   Future<void> _launchURL(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri);
+    if (await canLaunch(url)) {
+      await launch(url);
     } else {
       throw 'Could not launch $url';
     }

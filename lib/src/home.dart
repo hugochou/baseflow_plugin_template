@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class AppHome extends StatefulWidget {
   /// Constructs the [AppHome] class
   AppHome({
-    Key? key,
-    required this.title,
-    required this.pages,
+    Key key,
+    @required this.title,
+    @required this.pages,
     this.appBarActions,
   }) : super(key: key);
 
@@ -15,7 +15,7 @@ class AppHome extends StatefulWidget {
   /// title bar.
   final String title;
   final List<ExamplePage> pages;
-  final List<Widget>? appBarActions;
+  final List<Widget> appBarActions;
 
   @override
   _AppHomeState createState() => _AppHomeState();
